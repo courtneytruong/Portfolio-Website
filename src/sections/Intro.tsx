@@ -15,7 +15,10 @@ function Intro() {
           Developer
         </h1>
         <p className="mt-4 text-paper-400">
-          Software developer building full-stack apps with C#, .NET, and React. I come from a quality control background, which means I care as much about what breaks as what ships. Currently looking for fully remote opportunities.
+          Software developer building full-stack apps with C#, .NET, and React.
+          I come from a quality control background, which means I care as much
+          about what breaks as what ships. Currently looking for fully remote
+          opportunities.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
           <Button href="#projects" variant="primary">
