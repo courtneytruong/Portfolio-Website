@@ -1,1 +1,28 @@
 @import 'tailwindcss';
+
+@theme {
+  /* Palette */
+  --color-ink-950: #14171c;
+  --color-ink-800: #1e232b;
+  --color-paper-100: #f2efe9;
+  --color-paper-400: #9ca3af;
+  --color-accent-500: #e8a33d;
+  --color-accent-300: #f2c572;
+
+  /* Type families — font-sans drives body text by default, font-display/font-mono are opt-in */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Type scale */
+  --text-hero: 4.5rem;
+  --text-hero--line-height: 1.05;
+  --text-hero--letter-spacing: -0.02em;
+
+  --text-section-label: 0.75rem;
+  --text-section-label--line-height: 1.2;
+  --text-section-label--letter-spacing: 0.08em;
+
+  /* Layout */
+  --container-content: 75rem;
+}
