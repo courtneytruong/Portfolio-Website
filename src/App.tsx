@@ -1,5 +1,5 @@
 import Nav from './components/Nav'
-import Hero from './sections/Hero'
+import Intro from './sections/Intro'
 import About from './sections/About'
 import Projects from './sections/Projects'
 import Skills from './sections/Skills'
@@ -11,7 +11,7 @@ function App() {
     <>
       <Nav />
       <main className="bg-ink-950">
-        <Hero />
+        <Intro />
         <About />
         <Projects />
         <Skills />
