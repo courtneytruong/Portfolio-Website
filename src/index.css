@@ -26,3 +26,7 @@
   /* Layout */
   --container-content: 75rem;
 }
+
+html {
+  scroll-behavior: smooth;
+}
