@@ -1,24 +1,14 @@
-import Nav from './components/Nav'
-import Intro from './sections/Intro'
-import About from './sections/About'
-import Projects from './sections/Projects'
-import Skills from './sections/Skills'
-import Resume from './sections/Resume'
-import Contact from './sections/Contact'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import CaseStudy from './pages/CaseStudy'
 
 function App() {
   return (
-    <>
-      <Nav />
-      <main className="bg-ink-950">
-        <Intro />
-        <About />
-        <Projects />
-        <Skills />
-        <Resume />
-        <Contact />
-      </main>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/projects/:id" element={<CaseStudy />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   )
 }
 

@@ -1,5 +1,7 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import type { Project } from '../data/projects'
+import { ExternalLinkIcon, GithubIcon } from './icons'
 
 interface ProjectCardProps {
   project: Project
@@ -8,41 +10,6 @@ interface ProjectCardProps {
 
 const linkStyles =
   'inline-flex items-center gap-1.5 rounded-sm font-mono text-sm text-paper-100 transition-colors hover:text-accent-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950'
-
-function GithubIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 19 19"
-      fill="currentColor"
-      className={className}
-      aria-hidden="true"
-    >
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844"
-      />
-    </svg>
-  )
-}
-
-function ExternalLinkIcon({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={1.75}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-      aria-hidden="true"
-    >
-      <path d="M7 17 17 7" />
-      <path d="M8 7h9v9" />
-    </svg>
-  )
-}
 
 function ProjectCard({ project, featured = false }: ProjectCardProps) {
   const [imgError, setImgError] = useState(false)
@@ -76,7 +43,12 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
   )
 
   const links = (
-    <div className="flex items-center gap-5">
+    <div className="flex flex-wrap items-center gap-5">
+      {!featured && project.caseStudy && (
+        <Link to={`/projects/${project.id}`} className={linkStyles}>
+          Case study →
+        </Link>
+      )}
       {project.liveUrl && (
         <a
           href={project.liveUrl}
@@ -122,7 +94,15 @@ function ProjectCard({ project, featured = false }: ProjectCardProps) {
               <p className="font-mono text-section-label uppercase tracking-wide text-paper-400">
                 Case study
               </p>
-              <p className="mt-2 text-sm text-paper-400">{project.caseStudy}</p>
+              <p className="mt-2 text-sm text-paper-400">
+                {project.caseStudy.problem}
+              </p>
+              <Link
+                to={`/projects/${project.id}`}
+                className={`${linkStyles} mt-3`}
+              >
+                Read the full case study →
+              </Link>
             </div>
           )}
         </div>
