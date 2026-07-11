@@ -24,7 +24,11 @@ function Intro() {
           <Button href="#projects" variant="primary">
             View Projects
           </Button>
-          <Button href="/resume.pdf" download variant="secondary">
+          <Button
+            href="/resume.pdf"
+            download="Courtney-Truong-Resume.pdf"
+            variant="secondary"
+          >
             Download Resume
           </Button>
         </div>
