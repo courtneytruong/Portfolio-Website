@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import Intro from '../sections/Intro'
 import About from '../sections/About'
 import Projects from '../sections/Projects'
@@ -31,6 +32,7 @@ function Home() {
         <Resume />
         <Contact />
       </main>
+      <Footer />
     </>
   )
 }
