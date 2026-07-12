@@ -4,7 +4,7 @@ function Intro() {
   return (
     <section
       id="top"
-      className="flex min-h-screen scroll-mt-20 items-center justify-center px-6"
+      className="flex min-h-screen scroll-mt-20 items-center justify-center px-6 py-24"
     >
       <div className="animate-intro mx-auto max-w-content text-center">
         <p className="font-mono text-section-label text-accent-500 uppercase">

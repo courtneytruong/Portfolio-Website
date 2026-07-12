@@ -5,13 +5,20 @@ interface SectionShellProps {
   index: number
   label: string
   children?: ReactNode
+  className?: string
 }
 
-function SectionShell({ id, index, label, children }: SectionShellProps) {
+function SectionShell({
+  id,
+  index,
+  label,
+  children,
+  className = '',
+}: SectionShellProps) {
   return (
     <section
       id={id}
-      className="flex min-h-screen scroll-mt-20 items-center justify-center px-6"
+      className={`flex min-h-screen scroll-mt-20 items-center justify-center px-6 py-24 ${className}`}
     >
       <div className="mx-auto max-w-content text-center">
         <p className="font-mono text-section-label text-accent-500 uppercase">

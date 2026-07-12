@@ -3,7 +3,7 @@ import SectionShell from '../components/SectionShell'
 function About() {
   return (
     <SectionShell id="about" index={1} label="About">
-      <div className="mx-auto mt-8 max-w-2xl space-y-6 text-left text-paper-400">
+      <div className="mx-auto mt-8 max-w-content space-y-6 text-left text-paper-400">
         <p>
           I spent several years in quality control at a federal contractor,
           where my job was to find what was wrong before it became a bigger
