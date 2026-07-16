@@ -1,6 +1,7 @@
-import { Link, Navigate, useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { PROJECTS } from '../data/projects'
 import { GithubIcon } from '../components/icons'
+import NotFound from './NotFound'
 
 const linkStyles =
   'inline-flex items-center gap-1.5 rounded-sm font-mono text-sm text-paper-100 transition-colors hover:text-accent-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 focus-visible:ring-offset-2 focus-visible:ring-offset-ink-950'
@@ -10,7 +11,7 @@ function CaseStudy() {
   const project = PROJECTS.find((candidate) => candidate.id === id)
 
   if (!project || !project.caseStudy) {
-    return <Navigate to="/" replace />
+    return <NotFound />
   }
 
   const { caseStudy } = project
